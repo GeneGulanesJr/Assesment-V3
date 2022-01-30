@@ -52,16 +52,7 @@ export default function ApplicationPage() {
                 sortable: true,
                 grow: 2,
             },
-            {
-                name: "Actions",
-                cell: (works) => <HStack>
-                    <UpdateClient works={works} />
-                    <LTOForm works={works} />
 
-
-
-                </HStack>
-            },
         ],
         []
     );

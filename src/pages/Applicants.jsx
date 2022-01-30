@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react'
 import { Layout } from '../components/Layout'
 import React, { useEffect, useState, useMemo } from 'react'
-import {collection, onSnapshot} from "firebase/firestore";
+import {collection, onSnapshot,where,query} from "firebase/firestore";
 import { db } from "../utils/init-firebase";
 import UpdateClient from "./UpdateClient";
 import DataTable from "react-data-table-component";
@@ -17,20 +17,21 @@ import {useAuth} from "../contexts/AuthContext";
 
 
 export default function Applicants() {
-
+    const { currentUser } = useAuth()
     const [filterText, setFilterText] = useState("");
     const [targetClient, setTargetClient] = useState([]);
 
 
     const Data = () => {
-        const usersCollectionRef = collection(db, "users");
-        onSnapshot(usersCollectionRef, (snapshot) => {
-            let userData = []
-            snapshot.docs.forEach(doc => {
-                userData.push({ ...doc.data(), id: doc.id })
+        const userData = []
+        const q = query(collection(db, "applications"), where("id", "==", currentUser.uid))
+        onSnapshot(q, (snapshot) => {
+            snapshot.forEach((doc) => {
+                userData.push(doc.data())
             })
             setTargetClient(userData)
         })
+
     };
 
 
@@ -63,9 +64,6 @@ export default function Applicants() {
                 cell: (works) => <HStack>
                     <UpdateClient works={works} />
                     <LTOForm works={works} />
-
-
-
                 </HStack>
             },
         ],

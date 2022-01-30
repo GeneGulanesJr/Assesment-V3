@@ -113,7 +113,7 @@ export default function LTOForm({works}) {
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.districtOffice && form.touched.districtOffice}>
                                                                 <FormLabel htmlFor='districtOffice'>District Office</FormLabel>
-                                                                <Input {...field} id='districtOffice' placeholder='districtOffice' />
+                                                                <Input {...field} id='districtOffice' placeholder='districtOffice' required />
                                                                 <FormErrorMessage>{form.errors.districtOffice}</FormErrorMessage>
                                                             </FormControl>
                                                         )}
@@ -412,7 +412,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='BloodType' validate={validateName}>
+                                                    <Field name='BloodType'>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.BloodType && form.touched.BloodType}>
                                                                 <FormLabel htmlFor='BloodType'>Civil Status</FormLabel>
