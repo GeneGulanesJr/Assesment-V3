@@ -51,7 +51,6 @@ export default function LTOFormsCreate() {
 
 
 
-
             <Modal isOpen={isOpen} onClose={onClose} size='full'>
                 <ModalOverlay />
                 <ModalContent>
@@ -506,6 +505,7 @@ export default function LTOFormsCreate() {
                                                         </FormControl>
                                                     )}
                                                 </Field>
+
 
                                                 <Field name='Conditions' >
                                                     {({ field, form }) => (

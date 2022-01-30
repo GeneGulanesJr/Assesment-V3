@@ -19,7 +19,7 @@ export default function ApplicationPage() {
     const { currentUser } = useAuth()
     const [filterText, setFilterText] = useState("");
     const [targetClient, setTargetClient] = useState([]);
-    console.log(currentUser.uid,"Im hereaaaaaaaaaaaaaaaaaaaaa")
+
 
     const fetchData = () => {
         const userData = []
@@ -39,18 +39,7 @@ export default function ApplicationPage() {
 
     const columns = useMemo(
         () => [
-            {
-                name: "First Name",
-                selector: (row) => row.firstName,
-                sortable: true,
-                grow: 2,
-            },
-            {
-                name: "Last Name",
-                selector: (row) => row.lastName,
-                sortable: true,
-                grow: 2,
-            },
+
             {
                 name: "Status",
                 selector: (row) => row.status,

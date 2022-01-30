@@ -30,7 +30,7 @@ export default function Loginpage() {
   const mounted = useMounted()
 
   function handleRedirectToOrBack() {
-    history.replace(location.state?.from ?? '/')
+    history.replace(location.state?.from ?? '/profile')
   }
 
   return (

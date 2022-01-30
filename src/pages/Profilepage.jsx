@@ -23,6 +23,7 @@ export default function Profile() {
                 userData.push(doc.data())
             })
             setData(userData)
+            sessionStorage.setItem("name", JSON.stringify(userData));
         })
 
     };

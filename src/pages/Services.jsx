@@ -10,28 +10,63 @@ import {Card} from "../components/Card";
 
 
 export default function Services() {
-    return (
-        <Layout>
-            <Heading>Services Offered</Heading>
-            <Heading>
-                <Badge
-                    fontWeight='black'
-                    fontSize='4xl'
-                    mx={2}
-                    px={2}
-                    colorScheme='green'
-                >
-                    Love - Licensing Of Vehicle for Everyone,
-                </Badge>
-            </Heading>
+    const getRole= sessionStorage.getItem('name')
+    const tt = JSON.parse(getRole);
 
-            <Card maxW='md' mx='auto' mt={4}>
-                <Heading size='md' mt={8}>
-                    <img src={Love} alt="Banner"></img>
+    const userRole= tt[0].Role;
+
+
+
+    if(userRole=== 'Admin'){
+        return (
+            <Layout>
+                <Heading>Services Offered</Heading>
+                <Heading>
+                    <Badge
+                        fontWeight='black'
+                        fontSize='4xl'
+                        mx={2}
+                        px={2}
+                        colorScheme='green'
+                    >
+                      AN admin
+                    </Badge>
                 </Heading>
-            </Card>
+
+                <Card maxW='md' mx='auto' mt={4}>
+                    <Heading size='md' mt={8}>
+                        <img src={Love} alt="Banner"></img>
+                    </Heading>
+                </Card>
 
 
-        </Layout>
-    )
+            </Layout>
+        )
+    }else if (userRole==='User'){
+        return (
+            <Layout>
+                <Heading>Services Offered</Heading>
+                <Heading>
+                    <Badge
+                        fontWeight='black'
+                        fontSize='4xl'
+                        mx={2}
+                        px={2}
+                        colorScheme='green'
+                    >
+                       An user
+                    </Badge>
+                </Heading>
+
+                <Card maxW='md' mx='auto' mt={4}>
+                    <Heading size='md' mt={8}>
+                        <img src={Love} alt="Banner"></img>
+                    </Heading>
+                </Card>
+
+
+            </Layout>
+        )
+    }
+
 }
