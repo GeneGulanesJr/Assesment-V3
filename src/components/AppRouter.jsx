@@ -19,7 +19,7 @@ import Contact from "../pages/Contact";
 import Services from "../pages/Services";
 import Tech from "../pages/Tech";
 import ApplicationPage from "../pages/ApplicationPage";
-import AdminApplicationPage from "../pages/AdminApplicationPage";
+
 
 
 
@@ -31,7 +31,6 @@ export default function AppRouter(props) {
             <Router>
                 <Switch>
                     <Route exact path='/' component={Homepage} />
-                    <ProtectedRoute exact path='/admin-page' component={AdminApplicationPage} />
                     <ProtectedRoute exact path='/login' component={Loginpage} />
                     <ProtectedRoute exact path='/register' component={Registerpage} />
                     <Route exact path='/profile' component={Profilepage} />

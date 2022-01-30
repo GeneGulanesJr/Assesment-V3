@@ -46,8 +46,6 @@ export function Navbar() {
         {currentUser && <Navlink to='/contact' name='Contact Information' />}
         {currentUser && <Navlink to='/tech' name='Technology Stack' />}
         {currentUser &&  <Navlink to='/application' name='Application Page' />}
-        {currentUser && <Navlink to='/admin-page' name='Admin Application Page' />}
-
 
         {currentUser && ( <Navlink to='/logout'  name='Logout'  onClick={async e => {
               e.preventDefault()

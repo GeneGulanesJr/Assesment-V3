@@ -34,6 +34,7 @@ export default function LTOForm({works}) {
         await  updateDoc(userRef,{
             ...values,
             id:works.id
+
         })
     }
     function validateName(value) {
