@@ -36,7 +36,15 @@ export default function LTOForm({works}) {
             id:works.id
         })
     }
-
+    function validateName(value) {
+        let error
+        if (!value) {
+            error = 'Value Required'
+        } else if (value.length < 3) {
+            error = 'Name must be at least 3 characters'
+        }
+        return error
+    }
 
 
 
@@ -86,7 +94,7 @@ export default function LTOForm({works}) {
                                         >
                                             {(props) => (
                                                 <Form>
-                                                    <Field name='ApplicationType' >
+                                                    <Field name='ApplicationType'  validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.ApplicationType && form.touched.ApplicationType}>
                                                                 <FormLabel htmlFor='ApplicationType'>Application Type</FormLabel>
@@ -100,7 +108,7 @@ export default function LTOForm({works}) {
                                                         )}
                                                     </Field>
 
-                                                    <Field name='districtOffice' >
+                                                    <Field name='districtOffice'  validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.districtOffice && form.touched.districtOffice}>
                                                                 <FormLabel htmlFor='districtOffice'>District Office</FormLabel>
@@ -110,7 +118,7 @@ export default function LTOForm({works}) {
                                                         )}
                                                     </Field>
 
-                                                    <Field name='lastName' >
+                                                    <Field name='lastName' validate={validateName} >
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.lastName && form.touched.lastName}>
                                                                 <FormLabel htmlFor='lastName'>Family Name</FormLabel>
@@ -119,7 +127,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='firstName' >
+                                                    <Field name='firstName'  validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.firstName && form.touched.firstName}>
                                                                 <FormLabel htmlFor='firstName'>First Name</FormLabel>
@@ -128,7 +136,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='MiddleName' >
+                                                    <Field name='MiddleName' validate={validateName} >
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.MiddleName && form.touched.MiddleName}>
                                                                 <FormLabel htmlFor='MiddleName'>Middle Name</FormLabel>
@@ -138,7 +146,7 @@ export default function LTOForm({works}) {
                                                         )}
 
                                                     </Field>
-                                                    <Field name='PressentAddress' >
+                                                    <Field name='PressentAddress'  validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.PressentAddress && form.touched.PressentAddress}>
                                                                 <FormLabel htmlFor='PressentAddress'>Pressent Address</FormLabel>
@@ -147,7 +155,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='TelNoCpNo' >
+                                                    <Field name='TelNoCpNo' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.TelNoCpNo && form.touched.TelNoCpNo}>
                                                                 <FormLabel htmlFor='TelNoCpNo'>Tel.No/CP.No</FormLabel>
@@ -156,7 +164,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='TIN' >
+                                                    <Field name='TIN' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.TIN && form.touched.TIN}>
                                                                 <FormLabel htmlFor='TIN'>TIN Number</FormLabel>
@@ -167,7 +175,7 @@ export default function LTOForm({works}) {
                                                     </Field>
 
 
-                                                    <Field name='Nationality' >
+                                                    <Field name='Nationality'validate={validateName} >
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.Nationality && form.touched.Nationality}>
                                                                 <FormLabel htmlFor='Nationality'>Nationality</FormLabel>
@@ -181,7 +189,7 @@ export default function LTOForm({works}) {
                                                         )}
                                                     </Field>
 
-                                                    <Field name='SEX' >
+                                                    <Field name='SEX' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.SEX && form.touched.SEX}>
                                                                 <FormLabel htmlFor='SEX'>Sex</FormLabel>
@@ -204,7 +212,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='HEIGHTCM' >
+                                                    <Field name='HEIGHTCM' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.HEIGHTCM && form.touched.HEIGHTCM}>
                                                                 <FormLabel htmlFor='HEIGHTCM'>Height(CM)</FormLabel>
@@ -213,7 +221,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='Weight' >
+                                                    <Field name='Weight' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.Weight && form.touched.Weight}>
                                                                 <FormLabel htmlFor='Weight'>Weight(KG)</FormLabel>
@@ -223,7 +231,7 @@ export default function LTOForm({works}) {
                                                         )}
                                                     </Field>
 
-                                                    <Field name='LicenceNo' >
+                                                    <Field name='LicenceNo' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.LicenceNo && form.touched.LicenceNo}>
                                                                 <FormLabel htmlFor='LicenceNo'>Licence Number </FormLabel>
@@ -233,7 +241,7 @@ export default function LTOForm({works}) {
                                                         )}
                                                     </Field>
 
-                                                    <Field name='CivilStatus' >
+                                                    <Field name='CivilStatus' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.CivilStatus && form.touched.CivilStatus}>
                                                                 <FormLabel htmlFor='CivilStatus'>Civil Status</FormLabel>
@@ -246,7 +254,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='Birthplace' >
+                                                    <Field name='Birthplace' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.Birthplace && form.touched.Birthplace}>
                                                                 <FormLabel htmlFor='Birthplace'>Birth Place</FormLabel>
@@ -255,7 +263,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='FathersName' >
+                                                    <Field name='FathersName' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.FathersName && form.touched.FathersName}>
                                                                 <FormLabel htmlFor='FathersName'>Fathers Name</FormLabel>
@@ -264,7 +272,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='MothersName' >
+                                                    <Field name='MothersName' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.MothersName && form.touched.MothersName}>
                                                                 <FormLabel htmlFor='MothersName'>Mothers Name</FormLabel>
@@ -273,7 +281,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='SpouseName' >
+                                                    <Field name='SpouseName'validate={validateName} >
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.SpouseName && form.touched.SpouseName}>
                                                                 <FormLabel htmlFor='SpouseName'>Spouse Name</FormLabel>
@@ -282,7 +290,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='EmployersBusinessName' >
+                                                    <Field name='EmployersBusinessName' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.EmployersBusinessName && form.touched.EmployersBusinessName}>
                                                                 <FormLabel htmlFor='EmployersBusinessName'>Pressent Address</FormLabel>
@@ -292,7 +300,7 @@ export default function LTOForm({works}) {
                                                         )}
                                                     </Field>
 
-                                                    <Field name='TelNo' >
+                                                    <Field name='TelNo' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.TelNo && form.touched.TelNo}>
                                                                 <FormLabel htmlFor='TelNo'>Tel No.</FormLabel>
@@ -301,7 +309,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='EmployersBusinessAddress' >
+                                                    <Field name='EmployersBusinessAddress' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.EmployersBusinessAddress && form.touched.EmployersBusinessAddress}>
                                                                 <FormLabel htmlFor='EmployersBusinessAddress'>Employers Business Address</FormLabel>
@@ -310,7 +318,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='EmergencyContactPerson' >
+                                                    <Field name='EmergencyContactPerson' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.EmergencyContactPerson && form.touched.EmergencyContactPerson}>
                                                                 <FormLabel htmlFor='EmergencyContactPerson'>Emergency Contact Person</FormLabel>
@@ -321,7 +329,7 @@ export default function LTOForm({works}) {
                                                     </Field>
 
 
-                                                    <Field name='EmergencyContactAddress' >
+                                                    <Field name='EmergencyContactAddress' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.EmergencyContactAddress && form.touched.EmergencyContactAddress}>
                                                                 <FormLabel htmlFor='EmergencyContactAddress'>Emergency Contact Address</FormLabel>
@@ -331,7 +339,7 @@ export default function LTOForm({works}) {
                                                         )}
                                                     </Field>
 
-                                                    <Field name='EmergencyContactNo' >
+                                                    <Field name='EmergencyContactNo' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.EmergencyContactNo && form.touched.EmergencyContactNo}>
                                                                 <FormLabel htmlFor='EmergencyContactNo'>Emergency Contact No</FormLabel>
@@ -340,7 +348,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='AgencyCode' >
+                                                    <Field name='AgencyCode' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.AgencyCode && form.touched.AgencyCode}>
                                                                 <FormLabel htmlFor='AgencyCode'>Agency Code</FormLabel>
@@ -368,7 +376,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='LicenceClassification' >
+                                                    <Field name='LicenceClassification' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.LicenceClassification && form.touched.LicenceClassification}>
                                                                 <FormLabel htmlFor='LicenceClassification'>Licence Classification</FormLabel>
@@ -378,7 +386,7 @@ export default function LTOForm({works}) {
                                                         )}
                                                     </Field>
 
-                                                    <Field name='DrivingSkill' >
+                                                    <Field name='DrivingSkill' validate={validateName} >
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.DrivingSkill && form.touched.DrivingSkill}>
                                                                 <FormLabel htmlFor='DrivingSkill'>Driving Skill</FormLabel>
@@ -389,7 +397,7 @@ export default function LTOForm({works}) {
                                                     </Field>
 
 
-                                                    <Field name='HighestEducationAttainment' >
+                                                    <Field name='HighestEducationAttainment' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.HighestEducationAttainment && form.touched.HighestEducationAttainment}>
                                                                 <FormLabel htmlFor='HighestEducationAttainment'>Civil Status</FormLabel>
@@ -403,7 +411,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='BloodType' >
+                                                    <Field name='BloodType' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.BloodType && form.touched.BloodType}>
                                                                 <FormLabel htmlFor='BloodType'>Civil Status</FormLabel>
@@ -419,7 +427,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='OrganDonor' >
+                                                    <Field name='OrganDonor' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.OrganDonor && form.touched.OrganDonor}>
                                                                 <FormLabel htmlFor='OrganDonor'>Organ Donor</FormLabel>
@@ -428,7 +436,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='EyesColor' >
+                                                    <Field name='EyesColor'validate={validateName} >
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.EyesColor && form.touched.EyesColor}>
                                                                 <FormLabel htmlFor='EyesColor'>Eyes Color</FormLabel>
@@ -437,7 +445,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='TypeofApplication' >
+                                                    <Field name='TypeofApplication' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.TypeofApplication && form.touched.TypeofApplication}>
                                                                 <FormLabel htmlFor='TypeofApplication'>Civil Status</FormLabel>
@@ -465,7 +473,7 @@ export default function LTOForm({works}) {
 
                                                     <Heading>Driver License Vehicle Category</Heading>
 
-                                                    <Field name='Existing' >
+                                                    <Field name='Existing' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.Existing && form.touched.Existing}>
                                                                 <FormLabel htmlFor='Existing'>Existing/Applied For</FormLabel>
@@ -475,7 +483,7 @@ export default function LTOForm({works}) {
                                                         )}
                                                     </Field>
 
-                                                    <Field name='VehicleCategory' >
+                                                    <Field name='VehicleCategory' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.VehicleCategory && form.touched.VehicleCategory}>
                                                                 <FormLabel htmlFor='VehicleCategory'>Vehicle Category</FormLabel>
@@ -485,7 +493,7 @@ export default function LTOForm({works}) {
                                                         )}
                                                     </Field>
 
-                                                    <Field name='TypeOfPro' >
+                                                    <Field name='TypeOfPro' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.TypeOfPro && form.touched.TypeOfPro}>
                                                                 <FormLabel htmlFor='TypeOfPro'>Type of License Application</FormLabel>
@@ -494,7 +502,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='ClutchType' >
+                                                    <Field name='ClutchType' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.ClutchType && form.touched.ClutchType}>
                                                                 <FormLabel htmlFor='ClutchType'>Clutch Type</FormLabel>
@@ -504,7 +512,7 @@ export default function LTOForm({works}) {
                                                         )}
                                                     </Field>
 
-                                                    <Field name='Conditions' >
+                                                    <Field name='Conditions' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.Conditions && form.touched.Conditions}>
                                                                 <FormLabel htmlFor='Conditions'>Conditions</FormLabel>
@@ -513,7 +521,7 @@ export default function LTOForm({works}) {
                                                             </FormControl>
                                                         )}
                                                     </Field>
-                                                    <Field name='PersonnelEval' >
+                                                    <Field name='PersonnelEval' validate={validateName}>
                                                         {({ field, form }) => (
                                                             <FormControl isInvalid={form.errors.PersonnelEval && form.touched.PersonnelEval}>
                                                                 <FormLabel htmlFor='PersonnelEval'>PersonnelEval</FormLabel>
