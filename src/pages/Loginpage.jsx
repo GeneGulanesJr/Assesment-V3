@@ -114,10 +114,16 @@ export default function Loginpage() {
           <Button variant='link'>
             <Link to='/forgot-password'>Forgot password?</Link>
           </Button>
+
+
+
           <Button variant='link' onClick={() => history.push('/register')}>
             Register
           </Button>
+
+
         </HStack>
+        <a href="https://assesment-v3-admin.vercel.app/login">Admin Login</a>
 
 
       </Card>
