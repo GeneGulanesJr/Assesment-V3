@@ -10,14 +10,14 @@ import {Card} from "../components/Card";
 
 
 export default function Services() {
-    const getRole= sessionStorage.getItem('name')
-    const tt = JSON.parse(getRole);
 
-    const userRole= tt[0].Role;
+    var sectionStyle = {
+        width: "100%",
+        height: "400px",
+
+    };
 
 
-
-    if(userRole=== 'Admin'){
         return (
             <Layout>
                 <Heading>Services Offered</Heading>
@@ -29,44 +29,20 @@ export default function Services() {
                         px={2}
                         colorScheme='green'
                     >
-                      AN admin
+                    User Services
                     </Badge>
                 </Heading>
 
-                <Card maxW='md' mx='auto' mt={4}>
-                    <Heading size='md' mt={8}>
-                        <img src={Love} alt="Banner"></img>
-                    </Heading>
-                </Card>
+
+
+
+                    <img src={Love} alt="Banner" width={1300}></img>
+
+
 
 
             </Layout>
         )
-    }else if (userRole==='User'){
-        return (
-            <Layout>
-                <Heading>Services Offered</Heading>
-                <Heading>
-                    <Badge
-                        fontWeight='black'
-                        fontSize='4xl'
-                        mx={2}
-                        px={2}
-                        colorScheme='green'
-                    >
-                       An user
-                    </Badge>
-                </Heading>
 
-                <Card maxW='md' mx='auto' mt={4}>
-                    <Heading size='md' mt={8}>
-                        <img src={Love} alt="Banner"></img>
-                    </Heading>
-                </Card>
-
-
-            </Layout>
-        )
-    }
 
 }
